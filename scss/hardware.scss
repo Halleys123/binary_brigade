@@ -13,6 +13,175 @@ $grey: #a4acb7;
   gap: 2.4rem;
   align-self: stretch;
   width: 100%;
+  &__options {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.4rem;
+    align-self: stretch;
+    &__item {
+      display: flex;
+      min-height: 44.6rem;
+      padding: 3.2rem 2.4rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.6rem;
+      flex: 1 0 0;
+      border-radius: 1.6rem;
+      border: 1px solid $grey;
+      background: $black1;
+      max-height: 44.6rem;
+      min-height: 44.6rem;
+      //   overflow: hidden;
+      &__data {
+        display: flex;
+        padding: 0.8rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        align-self: stretch;
+        height: 100%;
+        overflow-y: scroll;
+
+        &__list {
+          display: flex;
+          padding: 0.8rem 0rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.8rem;
+          align-self: stretch;
+          &__item {
+            display: flex;
+            padding: 1rem;
+            border-radius: 0.4rem;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            border-bottom: 1px solid $grey;
+            transition: all 0.3s ease-in-out;
+            &--selected {
+              background: $black;
+            }
+            &__right {
+              display: flex;
+              padding: 1rem;
+              align-items: center;
+              gap: 4.8rem;
+              align-self: stretch;
+              &__btn {
+                display: flex;
+                padding: 1.2rem 2.8rem;
+                justify-content: center;
+                align-items: center;
+                border-radius: 1.2rem;
+                outline: 1px solid $grey;
+                gap: 0.8rem;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                  cursor: pointer;
+                  background: $black;
+                  outline: 1px solid $black;
+                }
+
+                &__circle {
+                  width: 1.6rem;
+                  height: 1.6rem;
+                  border-radius: 50%;
+                  background: $grey;
+                }
+                &__text {
+                  font-family: Helvetica;
+                  font-size: 1.6rem;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  color: $grey;
+                }
+                &--selected {
+                  background: $black1;
+                  outline: 1px solid $black1;
+                  &
+                    > .content__data__options__item__data__list__item__right__btn__text {
+                    color: $blue;
+                  }
+                  &
+                    > .content__data__options__item__data__list__item__right__btn__circle {
+                    background: $blue;
+                  }
+                  &:hover {
+                    background: $black;
+                    outline: 1px solid $blue;
+                  }
+                }
+              }
+            }
+            &__left {
+              display: flex;
+              padding: 1rem;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.8rem;
+              &__top {
+                color: $white;
+                font-family: Helvetica;
+                font-size: 1.6rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+              &__bottom {
+                display: flex;
+                padding: 0.4rem 0rem;
+                align-items: flex-start;
+                gap: 1rem;
+                &--text {
+                  color: $grey;
+                  font-family: Helvetica;
+                  font-size: 1.4rem;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                }
+              }
+            }
+          }
+        }
+        &__head {
+          display: flex;
+          padding: 0rem 1.2rem;
+          align-items: center;
+          gap: 1.2rem;
+          &--text {
+            color: $white;
+            font-family: Helvetica;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+          }
+          &--icon {
+            width: 3.2rem;
+            height: 3.2rem;
+            & > svg {
+              height: 100%;
+              width: 100%;
+              & > path {
+                transition: all 0.2s ease-in-out;
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+      &__text {
+        color: var(--grey, #a4acb7);
+        font-family: Helvetica;
+        font-size: 1.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
   &__summary {
     display: flex;
     padding: 3.2rem 2.4rem;
@@ -91,97 +260,147 @@ $grey: #a4acb7;
           align-items: flex-start;
           gap: 1rem;
           flex: 1 0 0;
-          &__top {
+          &__bottom {
             display: flex;
-            min-height: 3.2rem;
-            padding: 0rem 1.2rem;
-            justify-content: space-between;
-            align-items: center;
+            height: 14.4rem;
+            padding: 1rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.2rem;
             align-self: stretch;
-            &__right {
+            &__head {
+              font-family: Helvetica;
+              font-size: 1.8rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              color: $white;
+            }
+            &__cont {
               display: flex;
-              padding: 0rem 1rem;
-              align-items: center;
-              gap: 0.6rem;
-              align-self: stretch;
-              &:hover {
-                cursor: pointer;
-                &
-                  > .content__data__summary__main__data__item__top__right--text {
-                  color: $blue;
+              align-items: flex-start;
+              gap: 0.8rem;
+              &__item {
+                display: flex;
+                padding: 0.8rem 1.8rem;
+                align-items: flex-start;
+                gap: 1.2rem;
+                &__right {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-end;
+                  gap: 1rem;
+                  &--text {
+                    font-family: Helvetica;
+                    font-size: 1.4rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    color: $white;
+                  }
                 }
-                &
-                  > .content__data__summary__main__data__item__top__right--icon
-                  > svg
-                  > path {
-                  fill: $blue;
-                }
-              }
-              &--icon {
-                width: 1.6rem;
-                height: 1.6rem;
-                & > svg {
-                  height: 100%;
-                  width: 100%;
-                  & > path {
-                    transition: all 0.2s ease-in-out;
-                    fill: $grey;
-                    transition: all 0.2s ease-in-out;
+                &__left {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: flex-start;
+                  gap: 1rem;
+                  &__item {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                    gap: 0.4rem;
+                    &--icon {
+                      width: 1.6rem;
+                      height: 1.6rem;
+                    }
+                    &--text {
+                      font-family: Helvetica;
+                      font-size: 1.4rem;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: normal;
+                      color: $grey;
+                    }
                   }
                 }
               }
-              &--text {
-                transition: all 0.2s ease-in-out;
-                font-family: Helvetica;
-                font-size: 1.4rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                color: $white;
-              }
-            }
-            &__head {
-              display: flex;
-              //   width: 24.4rem;
-              height: 4.6rem;
-              flex-direction: column;
-              justify-content: center;
-              align-items: flex-start;
-              gap: 0.2rem;
-              &--main {
-                color: $white;
-                font-family: Helvetica;
-                font-size: 1.6rem;
-                font-style: normal;
-                font-weight: 700;
-                line-height: normal;
-              }
-              &--secondary {
-                font-family: Helvetica;
-                font-size: 1.2rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-
-                color: $grey;
-              }
             }
           }
-          &__cont {
+          &__top {
             display: flex;
+            padding: 1rem;
+            flex-direction: column;
             align-items: flex-start;
-            gap: 0.8rem;
-            &__item {
+            gap: 1.2rem;
+            align-self: stretch;
+            &__head {
               display: flex;
-              padding: 0.8rem 1.8rem;
-              align-items: flex-start;
-              gap: 1.2rem;
+              min-height: 3.2rem;
+              //   padding: 0rem 1.2rem;
+              justify-content: space-between;
+              align-items: center;
+              align-self: stretch;
+              &__left {
+                display: flex;
+                width: 24.4rem;
+                height: 4.6rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 0.2rem;
+                &--main {
+                  color: $white;
+                  font-family: Helvetica;
+                  font-size: 1.6rem;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                }
+                &--secondary {
+                  font-family: Helvetica;
+                  font-size: 1.2rem;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+
+                  color: $grey;
+                }
+              }
               &__right {
                 display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                gap: 1rem;
+                padding: 0rem 1rem;
+                align-items: center;
+                gap: 0.6rem;
+                align-self: stretch;
+                &:hover {
+                  cursor: pointer;
+                  &
+                    > .content__data__summary__main__data__item__top__head__right--text {
+                    color: $blue;
+                  }
+                  &
+                    > .content__data__summary__main__data__item__top__head__right--icon
+                    > svg
+                    > path {
+                    fill: $blue;
+                  }
+                }
+                &--icon {
+                  width: 1.6rem;
+                  height: 1.6rem;
+                  & > svg {
+                    height: 100%;
+                    width: 100%;
+                    & > path {
+                      transition: all 0.2s ease-in-out;
+                      fill: $grey;
+                      transition: all 0.2s ease-in-out;
+                    }
+                  }
+                }
                 &--text {
+                  transition: all 0.2s ease-in-out;
                   font-family: Helvetica;
                   font-size: 1.4rem;
                   font-style: normal;
@@ -190,28 +409,54 @@ $grey: #a4acb7;
                   color: $white;
                 }
               }
-              &__left {
+            }
+
+            &__cont {
+              display: flex;
+              align-items: flex-start;
+              gap: 0.8rem;
+              &__item {
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                padding: 0.8rem 1.8rem;
                 align-items: flex-start;
-                gap: 1rem;
-                &__item {
+                gap: 1.2rem;
+                &__right {
                   display: flex;
-                  justify-content: flex-end;
-                  align-items: flex-start;
-                  gap: 0.4rem;
-                  &--icon {
-                    width: 1.6rem;
-                    height: 1.6rem;
-                  }
+                  flex-direction: column;
+                  align-items: flex-end;
+                  gap: 1rem;
                   &--text {
                     font-family: Helvetica;
                     font-size: 1.4rem;
                     font-style: normal;
                     font-weight: 400;
                     line-height: normal;
-                    color: $grey;
+                    color: $white;
+                  }
+                }
+                &__left {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: flex-start;
+                  gap: 1rem;
+                  &__item {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                    gap: 0.4rem;
+                    &--icon {
+                      width: 1.6rem;
+                      height: 1.6rem;
+                    }
+                    &--text {
+                      font-family: Helvetica;
+                      font-size: 1.4rem;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: normal;
+                      color: $grey;
+                    }
                   }
                 }
               }

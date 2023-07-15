@@ -1,7 +1,6 @@
 const btn = document.querySelectorAll(
   ".content__data__servers__list__item__right__SelectBtn"
 );
-
 btn.forEach((item, indOne) => {
   console.log(item);
   item.addEventListener("click", (e) => {
