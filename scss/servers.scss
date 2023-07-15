@@ -1,0 +1,242 @@
+//variables
+$black: #24252d;
+$black1: #31323d;
+$white: #ffffff;
+$blue: #45b1e8;
+$grey: #a4acb7;
+.content__head {
+  display: flex;
+  padding: 0rem 0.4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  &__text {
+    font-family: Helvetica;
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $white;
+  }
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > svg {
+      height: 100%;
+      width: 100%;
+      & > path {
+        transition: all 0.2s ease-in-out;
+        fill: $white;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      & > svg > path {
+        fill: $blue;
+      }
+    }
+  }
+}
+.content__data {
+  height: 100%;
+  &__servers {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    padding: 3.2rem 2.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.6rem;
+    align-self: stretch;
+    border-radius: 1.6rem;
+    border: 1px solid $grey;
+    background: $black1;
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      align-self: stretch;
+      &__left {
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch;
+
+        &--text {
+          color: $white;
+          font-family: Helvetica;
+          font-size: 1.8rem;
+          font-style: normal;
+          font-weight: 700;
+          line-height: normal;
+        }
+        &--data {
+          display: flex;
+          width: 2.4rem;
+          height: 2.4rem;
+          padding: 0.4rem;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+          border-radius: 50%;
+          background-color: $black;
+          & > span {
+            font-family: Helvetica;
+            font-size: 1.2rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: $white;
+          }
+        }
+      }
+      &__right {
+        color: $white;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+          color: $grey;
+        }
+      }
+    }
+    &__list {
+      display: flex;
+      padding: 0.8rem;
+      height: 100%;
+      overflow: scroll;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      flex: 1 0 0;
+      align-self: stretch;
+      &__item {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        border-radius: 0.8rem;
+        border-bottom: 1px solid $grey;
+        &__left {
+          display: flex;
+          padding: 1rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.6rem;
+          &__top {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            align-self: stretch;
+            &--text {
+              color: $white;
+              font-family: Helvetica;
+              font-size: 1.6rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+            &--status {
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+              &__ball {
+                width: 0.8rem;
+                height: 0.8rem;
+                border-radius: 3.2rem;
+                background: #128400;
+              }
+              &__text {
+                color: #128400;
+                font-family: Helvetica;
+                font-size: 1.4rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+            }
+          }
+          &__bottom {
+            display: flex;
+            padding: 1rem 0rem;
+            align-items: flex-start;
+            gap: 1rem;
+            &__text {
+              color: $grey;
+              font-size: 1.4rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+            }
+          }
+        }
+        &__right {
+          display: flex;
+          padding: 1rem;
+          align-items: center;
+          gap: 4.8rem;
+          align-self: stretch;
+          transition: all 0.2s ease-in-out;
+
+          &__Btn {
+            display: flex;
+            padding: 1.3rem 3.2rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.8rem;
+            border-radius: 1.2rem;
+            outline: 1px solid $grey;
+            &--left {
+              width: 1.6rem;
+              height: 1.6rem;
+              border-radius: 1.2rem;
+              background: $grey;
+              transition: all 0.2s ease-in-out;
+            }
+            &--text {
+              color: $grey;
+              font-family: Helvetica;
+              font-size: 1.6rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              transition: all 0.2s ease-in-out;
+            }
+            &:hover {
+              cursor: pointer;
+              outline: 1px solid $white;
+              & > .content__data__servers__list__item__right__Btn--left {
+                background: $white;
+              }
+              & > .content__data__servers__list__item__right__Btn--text {
+                color: $white;
+              }
+            }
+            &--selected {
+              display: flex;
+              padding: 1.3rem 3.2rem;
+              justify-content: center;
+              align-items: center;
+              gap: 0.8rem;
+              border-radius: 1.2rem;
+              outline: 1px solid $black1;
+              & > .content__data__servers__list__item__right__Btn--left {
+                background: $blue;
+              }
+              & > .content__data__servers__list__item__right__Btn--text {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
